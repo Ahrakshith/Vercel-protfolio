@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rakshith A H - Portfolio</title>
+  <style>
+    body { background-color: #0f0f0f; color: white; margin: 0; font-family: sans-serif; }
+    nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; background: rgba(255,255,255,0.05); position: sticky; top: 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem; }
+    .card { background: #1a1a1a; padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .tag { background: rgba(255,255,255,0.1); padding: 0.3rem 0.6rem; border-radius: 5px; font-size: 0.8rem; }
+    .badge { padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.7rem; color: white; }
+    .ml { background-color: #3b82f6; }
+    .web { background-color: #9333ea; }
+    .ai { background-color: #d946ef; }
+    .status-completed { background: green; }
+    .status-progress { background: orange; }
+    .code-btn { margin-top: 1rem; padding: 0.5rem; background: rgba(255,255,255,0.1); text-align: center; border-radius: 5px; text-decoration: none; color: white; }
+    section { padding: 2rem; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="work" class="container">
+    <div class="card">
+      <div>
+        <h3>Bilingual Voice-Enabled Medication Adherence Platform</h3>
+        <div class="tags">
+          <span class="badge ai">AI</span>
+          <span class="badge status-completed">Completed</span>
+        </div>
+        <p>Engineered a bilingual platform using React and Firebase, enhancing patient symptom logging via audio/text for rural healthcare.</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">GCP</span>
+        </div>
+      </div>
+      <a href="https://github.com/Ahrakshith" class="code-btn">Code</a>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>Hospital Management System</h3>
+        <div class="tags">
+          <span class="badge web">Web</span>
+          <span class="badge status-completed">Completed</span>
+        </div>
+        <p>Developed a full-stack system with PHP, MySQL, and Bootstrap to streamline patient, doctor, and admin workflows.</p>
+        <div class="tags">
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Bootstrap</span>
+        </div>
+      </div>
+      <a href="https://github.com/Ahrakshith/Hospital-Management-System" class="code-btn">Code</a>
+    </div>
+
+    <div class="card">
+      <div>
+        <h3>Spam Email Detection System</h3>
+        <div class="tags">
+          <span class="badge ml">ML</span>
+          <span class="badge status-completed">Completed</span>
+        </div>
+        <p>Built a spam detection engine using Multinomial Naive Bayes with an interactive Streamlit frontend for real-time classification.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">NLP</span>
+        </div>
+      </div>
+      <a href="https://github.com/Ahrakshith/spam-email-classification" class="code-btn">Code</a>
+    </div>
+
+    <!-- Add more project cards below as needed -->
+
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Rakshith A H is an aspiring Software Engineer and Python Developer with experience in scalable automation solutions and audio data processing. Graduated from SJCE with a CGPA of 8.26. Passionate about problem-solving, cloud technologies, and building impactful software solutions.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p><!-- Add research works here --> </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: ahrakshith122@gmail.com</p>
+    <p>Phone: +91 87926 93971</p>
+    <p><a href="https://github.com/Ahrakshith" style="color:lightblue;">GitHub</a> | <a href="https://www.linkedin.com/in/rakshith-ah-748070202/" style="color:lightblue;">LinkedIn</a></p>
+  </section>
+
+</body>
+</html>
