@@ -1,108 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rakshith A H - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakshith A H | Portfolio</title>
   <style>
-    body { background-color: #0f0f0f; color: white; margin: 0; font-family: sans-serif; }
-    nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; background: rgba(255,255,255,0.05); position: sticky; top: 0; }
-    nav a { color: white; text-decoration: none; font-weight: bold; }
-    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem; }
-    .card { background: #1a1a1a; padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-    .tag { background: rgba(255,255,255,0.1); padding: 0.3rem 0.6rem; border-radius: 5px; font-size: 0.8rem; }
-    .badge { padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.7rem; color: white; }
-    .ml { background-color: #3b82f6; }
-    .web { background-color: #9333ea; }
-    .ai { background-color: #d946ef; }
-    .status-completed { background: green; }
-    .status-progress { background: orange; }
-    .code-btn { margin-top: 1rem; padding: 0.5rem; background: rgba(255,255,255,0.1); text-align: center; border-radius: 5px; text-decoration: none; color: white; }
-    section { padding: 2rem; }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #0D0D0D; color: #fff; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    nav { position: sticky; top: 0; z-index: 100; background: #0D0D0D; padding: 20px 0; display: flex; justify-content: center; gap: 40px; border-bottom: 1px solid #333; }
+    nav a { font-weight: 500; transition: color 0.3s ease; }
+    nav a:hover { color: #B78CF7; }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+    .hero { padding: 100px 0 60px; text-align: center; }
+    .hero img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid #B78CF7; margin-bottom: 20px; animation: fadeIn 1s ease-in; }
+    h1 { font-size: 48px; font-weight: 700; margin-bottom: 10px; }
+    p.subtitle { font-size: 18px; color: #ccc; font-weight: 400; }
+    h2.section-title { font-size: 32px; font-weight: 600; margin: 80px 0 30px; color: #B78CF7; text-align: center; position: relative; }
+    h2.section-title::after { content: ''; width: 50px; height: 3px; background: #B78CF7; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+    .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
+    .card { background: #1A1A1A; padding: 25px; border-radius: 15px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; animation: fadeInUp 1s ease-in; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(183, 140, 247, 0.2); }
+    .card h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+    .badge { font-size: 12px; padding: 4px 12px; border-radius: 50px; margin-right: 8px; color: #fff; display: inline-block; }
+    .badge.ml { background: #8b5cf6; }
+    .badge.web { background: #ec4899; }
+    .badge.mobile { background: #10b981; }
+    .status { background: #22c55e; padding: 2px 8px; border-radius: 50px; font-size: 11px; margin-left: 6px; }
+    .status.progress { background: #f59e0b; }
+    .tags { margin: 15px 0; }
+    .tags span { font-size: 12px; background: #262626; padding: 5px 10px; border-radius: 5px; margin-right: 8px; margin-top: 5px; display: inline-block; }
+    .code-btn { margin-top: 15px; padding: 10px; background: #B78CF7; border-radius: 8px; text-align: center; color: #fff; font-size: 14px; font-weight: 500; display: inline-block; transition: background 0.3s ease; }
+    .code-btn:hover { background: #9f75e0; }
+    .about-text, .education-list, .experience-list, .skills-list { padding: 20px 0; max-width: 800px; margin: 0 auto; }
+    .education-list li, .experience-list li { list-style: none; margin-bottom: 20px; }
+    .experience-list h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+    .experience-list span { color: #ccc; font-size: 14px; }
+    .skills-list p { margin-bottom: 10px; }
+    .contact-form { display: grid; gap: 20px; max-width: 600px; margin: 0 auto; }
+    .contact-form input, .contact-form textarea { padding: 12px; border: none; border-radius: 8px; background: #262626; color: #fff; font-size: 14px; }
+    .contact-form textarea { height: 150px; resize: vertical; }
+    .contact-form button { padding: 12px 25px; background: #B78CF7; border: none; border-radius: 8px; color: #fff; font-weight: 600; cursor: pointer; transition: background 0.3s ease; }
+    .contact-form button:hover { background: #9f75e0; }
+    footer { text-align: center; padding: 30px 0; background: #0A0A0A; font-size: 14px; color: #ccc; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-
+  <!-- Navigation -->
   <nav>
+    <a href="#home">Home</a>
     <a href="#work">Work</a>
     <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
     <a href="#research">Research</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="work" class="container">
-    <div class="card">
-      <div>
-        <h3>Bilingual Voice-Enabled Medication Adherence Platform</h3>
-        <div class="tags">
-          <span class="badge ai">AI</span>
-          <span class="badge status-completed">Completed</span>
-        </div>
-        <p>Engineered a bilingual platform using React and Firebase, enhancing patient symptom logging via audio/text for rural healthcare.</p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">GCP</span>
-        </div>
-      </div>
-      <a href="https://github.com/Ahrakshith" class="code-btn">Code</a>
-    </div>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <img src="profile.jpg" alt="Rakshith A H">
+    <h1>Rakshith A H</h1>
+    <p class="subtitle">Aspiring Software Engineer | Python Developer | Cloud & Data Enthusiast</p>
+  </section>
 
-    <div class="card">
-      <div>
-        <h3>Hospital Management System</h3>
-        <div class="tags">
+  <!-- Work -->
+  <h2 class="section-title" id="work">Work</h2>
+  <div class="container">
+    <div class="work-grid">
+      <div class="card">
+        <div>
+          <h3>Bilingual Voice-Enabled Medication Adherence Platform</h3>
           <span class="badge web">Web</span>
-          <span class="badge status-completed">Completed</span>
+          <span class="status">Completed</span>
+          <p>Engineered a voice-enabled bilingual platform (English/Kannada) using React and Firebase, streamlining patient symptom logging via audio/text, aiding accessibility in rural healthcare.</p>
+          <div class="tags">
+            <span>React</span><span>Firebase</span><span>GCP</span>
+          </div>
         </div>
-        <p>Developed a full-stack system with PHP, MySQL, and Bootstrap to streamline patient, doctor, and admin workflows.</p>
-        <div class="tags">
-          <span class="tag">PHP</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Bootstrap</span>
-        </div>
+        <a href="#" class="code-btn">Code</a>
       </div>
-      <a href="https://github.com/Ahrakshith/Hospital-Management-System" class="code-btn">Code</a>
-    </div>
-
-    <div class="card">
-      <div>
-        <h3>Spam Email Detection System</h3>
-        <div class="tags">
+      <div class="card">
+        <div>
+          <h3>Hospital Management System</h3>
+          <span class="badge web">Web</span>
+          <span class="status">Completed</span>
+          <p>Architected a full-stack system with PHP, MySQL, JavaScript, HTML5, CSS3, and Bootstrap, streamlining patient, doctor, and admin workflows.</p>
+          <div class="tags">
+            <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span><span>TCPDF</span>
+          </div>
+        </div>
+        <a href="#" class="code-btn">Code</a>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Spam Email Detection System</h3>
           <span class="badge ml">ML</span>
-          <span class="badge status-completed">Completed</span>
+          <span class="status">Completed</span>
+          <p>Developed a spam detection engine using Multinomial Naive Bayes, achieving 95% accuracy on 5,000+ emails through optimized NLP pipelines.</p>
+          <div class="tags">
+            <span>Python</span><span>Scikit-learn</span><span>spaCy</span><span>Streamlit</span>
+          </div>
         </div>
-        <p>Built a spam detection engine using Multinomial Naive Bayes with an interactive Streamlit frontend for real-time classification.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">NLP</span>
-        </div>
+        <a href="#" class="code-btn">Code</a>
       </div>
-      <a href="https://github.com/Ahrakshith/spam-email-classification" class="code-btn">Code</a>
     </div>
+  </div>
 
-    <!-- Add more project cards below as needed -->
+  <!-- About -->
+  <h2 class="section-title" id="about">About</h2>
+  <div class="container about-text">
+    <p>Aspiring Software Engineer and Python Developer with a solid foundation in Information Science (CGPA: 8.26, SJCE). Experienced in developing scalable solutions and process automation, including an internship at LG Soft India, where I enhanced workflows for Amazon Alexa. Skilled in Python, C++, and cloud technologies, I am eager to contribute to innovative projects in a collaborative environment.</p>
+  </div>
 
-  </section>
+  <!-- Education -->
+  <h2 class="section-title" id="education">Education</h2>
+  <div class="container education-list">
+    <ul>
+      <li>JSS Science and Technology University (Formerly SJCE), Mysore — Bachelor of Engineering, Information Science, CGPA 8.26 (2021–2025)</li>
+      <li>Vivekananda PU College, Nehru Nagar, Puttur — PCMB, State Board, 90% (2019–2021)</li>
+    </ul>
+  </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Rakshith A H is an aspiring Software Engineer and Python Developer with experience in scalable automation solutions and audio data processing. Graduated from SJCE with a CGPA of 8.26. Passionate about problem-solving, cloud technologies, and building impactful software solutions.</p>
-  </section>
+  <!-- Experience -->
+  <h2 class="section-title" id="experience">Experience</h2>
+  <div class="container experience-list">
+    <h3>Research Engineer Intern — LG Soft India <span>Sep 2024 – Apr 2025</span></h3>
+    <ul>
+      <li>Automated audio playback analysis using Python scripts, detecting silent intervals across 15+ languages and generating .txt reports, reducing QA time and improving Alexa test coverage by 30%.</li>
+      <li>Built post-processing tools to parse test outputs and compile summary tables, identifying language-wise validation status for different audio modules.</li>
+      <li>Enabled efficient debugging by automating report generation and improving insight into failed cases, enhancing test coverage and reducing manual effort.</li>
+    </ul>
+  </div>
 
-  <section id="research">
-    <h2>Research</h2>
-    <p><!-- Add research works here --> </p>
-  </section>
+  <!-- Skills -->
+  <h2 class="section-title" id="skills">Skills</h2>
+  <div class="container skills-list">
+    <p><strong>Languages:</strong> Python, C++, JavaScript</p>
+    <p><strong>Web & API Development:</strong> REST APIs, Flask, Basic FastAPI, Streamlit</p>
+    <p><strong>System Programming:</strong> C++, Data Structures & Algorithms, OS Concepts</p>
+    <p><strong>Cloud & DevOps:</strong> AWS, Firebase, Google Cloud Storage (GCS)</p>
+    <p><strong>Databases & Tools:</strong> MySQL, SQL Server, Git, VS Code</p>
+    <p><strong>Concepts:</strong> Object-Oriented Programming (OOP), Cloud Computing, Data Mining, Computer Networks</p>
+    <p><strong>AI & Data Science:</strong> Familiarity with AI/ML, NLP, data preprocessing, model evaluation (Scikit-learn, spaCy, Pandas)</p>
+    <p><strong>Voice & Audio Processing:</strong> Google Speech-to-Text API, gTTS, PyQt5, pydub</p>
+    <p><strong>Certifications:</strong> REST APIs with Flask and Python</p>
+    <p><strong>Languages (Spoken):</strong> English (Professional), Kannada (Native), Tulu (Fluent)</p>
+    <p><strong>Interests:</strong> Adventures, Outdoor Activities, Community Volunteering</p>
+  </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: ahrakshith122@gmail.com</p>
-    <p>Phone: +91 87926 93971</p>
-    <p><a href="https://github.com/Ahrakshith" style="color:lightblue;">GitHub</a> | <a href="https://www.linkedin.com/in/rakshith-ah-748070202/" style="color:lightblue;">LinkedIn</a></p>
-  </section>
+  <!-- Research (Placeholder) -->
+  <h2 class="section-title" id="research">Research</h2>
+  <div class="container">
+    <p>[Add your research papers or projects here]</p>
+  </div>
 
+  <!-- Contact -->
+  <h2 class="section-title" id="contact">Contact</h2>
+  <div class="container contact-form">
+    <form action="https://formspree.io/f/xgvznzvq" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>© 2025 Rakshith A H</footer>
 </body>
 </html>
